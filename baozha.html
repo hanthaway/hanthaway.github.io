@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+html{overflow: hidden;}
+#div1{position:relative;width:700px; height:400px; margin:100px auto; background:url(images/2.jpg) no-repeat;}
+#div1 span{ position:absolute;left:0;top:0;width:100px; height:100px; background:url(images/1.jpg) no-repeat;}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById("div1");
+	var R = 6;
+	var C = 9;
+	var len = R*C;
+	
+	for(var r = 0; r < R; r++){
+		for(var c = 0; c < C; c++){
+			var oSpan = document.createElement("span");
+			oDiv.appendChild(oSpan);
+			oSpan.style.width = oDiv.offsetWidth/C + "px";
+			oSpan.style.height = oDiv.offsetHeight/R + "px";
+			
+			oSpan.style.left = oSpan.offsetWidth*c + "px";
+			oSpan.style.top  = oSpan.offsetHeight*r + "px";
+			
+			oSpan.style.backgroundPosition = -oSpan.offsetLeft+"px -"+oSpan.offsetTop + "px";
+		}
+	}
+	
+	/*
+		oDiv  显示新图
+		oSpan 显示老图
+	
+	*/
+	
+	var iNow = 0;
+	var aSpan = oDiv.children;
+	oDiv.onclick = function(){
+		
+		//换图片
+		
+		for(var i = 0; i < len; i++){
+			aSpan[i].style.transition = "none";	
+			aSpan[i].style.opacity = "1";
+			aSpan[i].style.transform = "translate(0px,0px) rotateX(0deg) rotateY(0deg)";
+			aSpan[i].style.backgroundImage = "url(images/"+(iNow%12+1)+".jpg)";
+		}
+		
+		//div换新图
+		oDiv.style.backgroundImage = "url(images/"+((iNow+1)%12+1)+".jpg)";
+		
+		iNow++;
+		setTimeout(function(){
+			for(var i = 0; i < len; i++){
+				//算位置：span中心-oDiv中心
+				aSpan[i].style.transition = "1s all ease";
+				var x = aSpan[i].offsetLeft + aSpan[i].offsetWidth/2 - oDiv.offsetWidth/2;
+				var y = aSpan[i].offsetTop + aSpan[i].offsetHeight/2 - oDiv.offsetHeight/2;
+				
+				aSpan[i].style.transform = "translate("+x/2+"px,"+y/2+"px) rotateX("+rnd(-180,180)+"deg) rotateY("+rnd(-180,180)+"deg)";
+				
+				aSpan[i].style.opacity = "0";
+				
+			}
+		},0);
+	};
+	
+	
+	function rnd(n,m){
+		return Math.floor(Math.random()*(m-n)+n);
+	}
+	
+ 
+};
+
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
