@@ -1,205 +1,715 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>美国想象力英语</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/mobile/css/grid.css">
-    <link rel="stylesheet" href="/mobile/css/style.css">
-    <link rel="stylesheet" href="/mobile/css/search.css">
-    <link rel="stylesheet" href="/mobile/css/camera.css">
-    <link rel="stylesheet" href="/mobile/css/owl-carousel.css">
-    <script src="/mobile/js/jquery.js"></script>
-    <script src="/mobile/js/jquery-migrate-1.2.1.js"></script>
-    <!--[if lt IE 9]>
-    <html class="lt-ie9">
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
-            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+    <title>
+         美国想象力英语|少儿英语、幼儿英语、青少年英语教学专家，美国原版全智能自适应英语教学系统
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content="美国想象力英语, 想象力英语，宜美吉教育, 幼儿英语，儿童英语，少儿英语、提高英语成绩" />
+    <meta name="description" content="美国想象力英语是一套针对少儿英语培训、幼儿英语培训、青少年英语培训的美国原版英语教学系统，通过强大的全智能自适应功能与丰富的教学内容，为各类青少儿英语教育培训机构和学校带来一站式的英语教学解决方案。诚邀莅临参观。详询4006688991。" />
+    <link href="/static/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/camera.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/js.js" type="text/javascript"></script>
+    <script type='text/javascript' src='/static/scripts/jquery.min.js'></script>
+    <script type='text/javascript' src='/static/scripts/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='/static/scripts/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='/static/scripts/camera.min.js'></script>
+    <script src="/static/js/video.js"></script>
+    <link href="/static/css/cover.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+    <script>
+        if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+            window.location.href = "/mobile/index.htm";
+        }
+        jQuery(function () {
+            jQuery('#camera').camera({
+                height: '480px',
+                pagination: false,
+                thumbnails: false,
+                loader: 'none'
+            });
+        });
+        window.onload=function(){
+            var l=window.screen.width;
+            var oCont=$('#content_box');
+            var aDiv=document.getElementById('content_box').children;
+            var container = $('.camera_container');
+            var list = $('.content_box');
+            var prev = $('#prev');
+            var next = $('#next');
+            var index = 1;
+            var interval = 3000;
+            var timer;
+            var ready=true;
+            if(l<=1366){
+                var h=document.getElementById('img').offsetHeight*l/1920;
+                $(".flash").css({"height":h});
+            }else{
+                $(".flash").css({"height":"480px;"});
+            }
+            oCont.css({"left":-l});
+            clearInterval(timer);
+            timer=setInterval(function(){
+                    tab();
+            },4000)
+            for (var i = aDiv.length - 1; i >= 0; i--) {
+               aDiv[i].style.width=window.screen.width+"px";
+            }
+            container.hover(function(){
+               clearInterval(timer);
+               prev.css({"display":"block"});
+               next.css({"display":"block"});       
+            },function(){
+               clearInterval(timer);
+               timer=setInterval(function(){
+                    tab();
+               },4000)
+               prev.css({"display":"none"});
+               next.css({"display":"none"});
+            })
+            next.click(tab);
+            prev.click(function(){
+                if(ready){
+                    index--;
+                    ready=false;
+                    var offset=-l*index
+                    oCont.stop().animate({left:offset},{duration:800,easing:"linear",complete:function(){
+                        ready=true;
+                        if(index==0){
+                            index=3; 
+                            var a=-index*l;
+                            oCont.css({left:a+"px"});   
+                        }
+                    }})
+                }else{
+                    return;
+                }       
+            });
+            function tab(){
+                if(ready){
+                    index++;
+                    ready=false;
+                    var offset=-l*index               
+                    oCont.stop().animate({left:offset},{duration:800,easing:"linear",complete:function(){
+                        ready=true;   
+                        if(index>3){
+                            oCont.css({left:-l});
+                            index=1; 
+                        }
+                    }}) 
+                }else{
+                    return;
+                }           
+            }
+        };
+    </script>
+    <!--轮播-->
+    <link rel="stylesheet" href="/static/css/idangerous.swiper.css">
+    <script src="/static/js/idangerous.swiper.min.js" type="text/javascript"></script>
+    <script src="/static/js/swiper.js"></script>
+</head>
+<body>
+    <!--#include file="/nav/head.htm"-->
+    <div class="flash cl">
+       <div class="camera_container">
+            <a href="javascript:;" class="prev" id="prev"></a>
+            <a href="javascript:;" class="next" id="next"></a>
+            <div class="content_box" id="content_box">
+                <div class="container_box">
+                    <img src="/static/img/banner_3.jpg" id="img">
+                        <div class="camera_caption fadeIn">
+                            <div class="container">
+                                <div class="bg-secondary">
+                                    <h2>
+                                        让英语能力超越你的想象
+                                    </h2>
+                                    <p>
+                                        自适应系统，11个学习模块<br />
+                                        8年美国课堂教学
+                                    </p>
+                                    <!--<a class="btn" href="#">了解更多</a>-->
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+                <div class="container_box">
+                    <img src="/static/img/mp_14.jpg">
+                        <div class="camera_caption fadeIn">
+                            <div class="container">
+                                <div class="bg-secondary">
+                                    <h2>
+                                        智慧英语，美国课堂
+                                    </h2>
+                                    <p>
+                                        美国想象力英语<br />
+                                        2015年已正式登陆中国
+                                    </p>
+                                    <a class="btn" href="/nav/Introduction.htm">了解更多</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="container_box">
+                    <img src="/static/img/banner_2.jpg">
+                        <div class="camera_caption fadeIn">
+                            <div class="container">
+                                <div class="bg-secondary">
+                                    <h2>
+                                        随时随地， 立享美国课堂
+                                    </h2>
+                                    <p>
+                                        和全球100万小朋友<br />
+                                        一起体验纯正的美式课堂
+                                    </p>
+                                    <!--<a class="btn" href="#">了解更多</a>-->
+                                </div>
+                            </div>
+                        </div>
+                </div>    
+                <div class="container_box">
+                    <img src="/static/img/banner_3.jpg">
+                        <div class="camera_caption fadeIn">
+                            <div class="container">
+                                <div class="bg-secondary">
+                                    <h2>
+                                        让英语能力超越你的想象
+                                    </h2>
+                                    <p>
+                                        自适应系统，11个学习模块<br />
+                                        8年美国课堂教学
+                                    </p>
+                                    <!--<a class="btn" href="#">了解更多</a>-->
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+                <div class="container_box">
+                    <img src="/static/img/mp_14.jpg">
+                        <div class="camera_caption fadeIn">
+                            <div class="container">
+                                <div class="bg-secondary">
+                                    <h2>
+                                        智慧英语，美国课堂
+                                    </h2>
+                                    <p>
+                                        美国想象力英语<br />
+                                        2015年已正式登陆中国
+                                    </p>
+                                    <a class="btn" href="/nav/Introduction.htm">了解更多</a>
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+            </div>    
+        </div>
+    </div>
+    <div class="nianling cl">
+        <a href="/nav/system.htm">
+            <div class="nianlingl fl">
+                <strong>4-6岁 </strong>
+                <p>
+                    幼儿英语
+                </p>
+                <div class="nianlingc">
+                    <img src="/static/img/Main-page_23.png" />
+                </div>
+            </div>
+        </a><a href="/nav/system.htm?num=2">
+            <div class="nianlingm fl">
+                <strong>7-9岁 </strong>
+                <p>
+                    少儿英语
+                </p>
+                <div class="nianlingc">
+                    <img src="/static/img/Main-page_20.png" />
+                </div>
+            </div>
+        </a><a href="/nav/system.htm?num=3">
+            <div class="nianlingr fl">
+                <strong>10-15岁 </strong>
+                <p>
+                    青少年英语
+                </p>
+                <div class="nianlingc">
+                    <img src="/static/img/mp_21.png" />
+                </div>
+            </div>
         </a>
     </div>
-    <script src="js/html5shiv.js"></script>
-    <![endif]-->
-
-    <script src='/mobile/js/device.min.js';></script>
-    <style>
-        .span{display: block;width: 40px;height: 40px;background: red;margin: 0 auto;line-height: 40px;font-size: 20px;color: #fff;margin-top: 20px;margin-bottom: 10px;}
-    </style>
-</head>
-
-<body>
-<div class="page">
-    <!--========================================================
-                              HEADER
-    =========================================================-->
-    <!--#include file="/mobile/nav/header.htm"-->
-        <div class="camera_container">
-            <div id="camera" class="camera_wrap">
-                <div data-src="/mobile/images/page-1_slide01.jpg">
-                    <div class="camera_caption fadeIn">
-                        <div class="container">
-                            <div class="bg-secondary">
-                                <h2>智慧英语，美国课堂</h2>
-
-                                <p>美国想象力英语</p>
-                                <p>2015年已正式登陆中国</p>
-                                <a class="btn" href="/mobile/nav/Introduction.htm">了解更多</a>
-                            </div>
-                        </div>
+    <div class="xitong cl">
+        <div class="xitongl fl">
+            <strong>
+                <span class="fl1"></span><span class="fl2">美国自适应互动教学系统</span><span class="fl3"></span>
+            </strong><span class="cl">全球100多万个孩子见证学习效果 </span>
+            <p class="cl">
+                基于美国共同核心标准Common Core（相当于美国英语教学大纲），适用于4-15岁孩子，先进自适应系统实现真正的因材施教，足不出户立享美国课堂。11年持续更新与研发，广泛应用于美国多个州的课堂教学，畅行十多个国家，全球已有100多万个孩子从中受益！
+            </p>
+        </div>
+        <div class="xitongr fr">
+            <strong>
+                <span class="fl1"></span><span class="fl2">孩子学习英语的上好礼物</span><span class="fl3"></span>
+            </strong><span class="cl">解放家长，解放孩子，快乐学习 </span>
+            <p class="cl">
+                节省每周送孩子去培训班在路上及等候的精力和时间、不用担心培训班外教的频繁更换、一目了然查看孩子的学习效果，海量动画和高清视频让孩子没有学习的枯燥感，同龄孩子就是孩子最好的老师。随时随地，想学就学，从此，爸妈再也不用为孩子学习英语发愁了！
+            </p>
+        </div>
+    </div>
+    <div class="liwu cl">
+        <div class="liwuc cl">
+            <strong>
+                <span class="fl1"></span><span class="fl2">6大优势，让孩子轻松爱上英语</span><span class="fl3"></span>
+            </strong><span class="cl">为孩子定制英语专属课程 </span>
+        </div>
+        <div class="liwux cl">
+            <dl>
+                <dt><span>1</span> </dt>
+                <dd>
+                    <strong>先进的自适应系统</strong>
+                    <p>
+                        根据每人情况自动生成不同教学内容，100<br />
+                        个人就有100种课程，真正的量身定制！
+                    </p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><span>2</span> </dt>
+                <dd>
+                    <strong>高品质海量视频</strong>
+                    <p>
+                        6000多部由美国好莱坞动画团队操刀制作的动画及视频，让孩子在视觉的盛宴中享受学习英语的乐趣！
+                    </p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><span>3</span> </dt>
+                <dd>
+                    <strong>孩子教孩子</strong>
+                    <p>
+                        没有年龄隔阂，思维方式接近，行动习惯相符，<br />
+                        小老师教学更容易取得大效果！
+                    </p>
+                </dd>
+            </dl>
+        </div>
+        <div class="liwuy cl">
+            <img src="/static/img/mp_27.png" />
+        </div>
+        <div class="liwux cl">
+            <dl>
+                <dt><span>4</span> </dt>
+                <dd>
+                    <strong>人性化纠错</strong>
+                    <p>
+                        不是简单判断对与错，错了换个方式继续学，<br />
+                        心理学与教育学双重保障！
+                    </p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><span>5</span> </dt>
+                <dd>
+                    <strong>巨额收入做研发</strong>
+                    <p>
+                        每年上亿元的费用投入研发，保证系统不断更<br />
+                        新，让学习内容更全面、更新颖、更科学！
+                    </p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><span>6</span> </dt>
+                <dd>
+                    <strong>完善的后台报告系统</strong>
+                    <p>
+                        所学内容与未学内容一目了然，对薄弱内容提<br />
+                        供针对性辅导，直观查看孩子的学习效果！
+                    </p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="tianshi cl">
+        <strong class="tit cl">
+            <span class="fl1"></span><span class="fl2">在Imagine Learning的世界里，每个孩子都是语言的天使</span><span class="fl3"></span>
+        </strong>
+        <div class="device cl">
+            <a class="arrow-left" href="#"></a><a class="arrow-right" href="#"></a>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <dl>
+                            <dt>
+                                <img url="XMTMyNTI3OTc2MA==" class="video" src="/static/img/Main-page_31.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我有很多理想：<br />
+                                    动物园的管理员、兽医、医生和<br />
+                                    歌手。
+                                </strong>
+                                <p>
+                                    <span>-Carmen</span><br />
+                                    幼儿园，乔治亚
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTUwMTQ3ODkyOA==" class="video" src="/static/img/mp_33.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我想研究火箭，发射火箭。
+                                </strong>
+                                <p>
+                                    <span>-Allison</span><br />
+                                    2年级，弗吉尼亚
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTMzNjEwNDI3Ng==" class="video" src="/static/img/frt.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    学习英语是我最大的乐趣。坚持，就是胜利！
+                                </strong>
+                                <p>
+                                    <span>-樊荣添</span><br />
+                                    9岁（三年级），宁波
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTM3MzQzMTk1Ng==" class="video" src="/static/img/lez.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我是帅气的钢琴小王子，也是快乐的英语小达人！
+                                </strong>
+                                <p>
+                                    <span>-柳恩泽</span><br />
+                                    6岁（一年级），上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTM3ODE4ODExNg==" class="video" src="/static/img/yz_1.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    在英语的学习中获得进步，爸爸妈妈都说我长大啦！
+                                </strong>
+                                <p>
+                                    <span>-于泽</span><br />
+                                    7岁（一年级），上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTM5MTM3MTUyOA==" class="video" src="/static/img/ybx.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    英语带给我自信，口语棒棒哒！
+                                </strong>
+                                <p>
+                                    <span>-杨秉心</span><br />
+                                    7岁（一年级），上海
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-slide">
+                        <dl>
+                            <dt>
+                                <img url="XMTU4MTA5MTY0NA==" class="video" src="/static/img/wzr.jpg" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我认为唱英文歌也是学好英语的方式！
+                                </strong>
+                                <p>
+                                    <span>-汪子然 Max</span><br />
+                                    6岁（一年级），衢州
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTUwNzk5ODMyNA==" class="video" src="/static/img/Main-page_41.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我想成为一名教师。<br />
+                                </strong>
+                                <p>
+                                    <span>-Jayla</span><br />
+                                    5年级，加利福尼亚
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XODg2OTg3MDg4==" class="video" src="/static/img/Main-page_42.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我喜欢动物，我长大之后想当一个兽医。
+                                </strong>
+                                <p>
+                                    <span>-Emily </span><br />
+                                    二年级，纽约
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTUwMTQ4MTUwOA==" class="video" src="/static/img/Main-page_43.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    高中毕业后我想去读大学，读护士专业。
+                                </strong>
+                                <p>
+                                    <span>-Mustafa</span><br />
+                                    高一，伊拉克国籍，美国奥斯汀
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTU0OTc0MjA2MA==" class="video" src="/static/img/Eason.jpg" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    今天，我想读个英语故事给大家听！
+                                </strong>
+                                <p>
+                                    <span>-高稷 Eason</span><br />
+                                    7岁（一年级），上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTY4NzIxMzg4OA==" class="video" src="/static/img/Main-page_48.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    我在想象力英语21天挑战玩得特别开心！
+                                </strong>
+                                <p>
+                                    <span>-陈奕彤Elain</span><br />
+                                    4岁（中班），上海
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                     <div class="swiper-slide">
+                        <dl>
+                            <dt>
+                                <img url="XMTcwODcyNzkxNg==" class="video" src="/static/img/Nicole.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    I am Spiderwoman! 
+                                </strong>
+                                <p>
+                                    <span>-邵迦予 Nicole</span><br />
+                                    10岁（四年级），无锡
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTY4NjgyNjc0NA==" class="video" src="/static/img/borther.jpg" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    30个月的双胞胎练习想象力3个月的惊人成果！<br />
+                                </strong>
+                                <p>
+                                    <span>-江宽和江远</span><br />
+                                    2.5岁，上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTcwNjA2NTM4MA==" class="video" src="/static/img/Albert.jpg" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    每天打开就能接触英语！
+                                </strong>
+                                <p>
+                                    <span>-曹一阳Albert </span><br />
+                                    5岁（大班），上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTcwNzcwNDk5Ng==" class="video" src="/static/img/name.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    想象力的听力和阅读对我帮助很大，成绩提高了11分！
+                                </strong>
+                                <p>
+                                    <span>-六年级学生</span><br />
+                                    上海市南中学
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTYwNzkyNTQ1Mg==" class="video" src="/static/img/yey.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    这些孩子一个个都聚精会神，像小专家一样！
+                                </strong>
+                                <p>
+                                    <span>-南门幼儿园</span><br />
+                                    喜洋洋班，上海
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img url="XMTYwNzkzNDE0NA==" class="video" src="/static/img/sjx.png" />
+                            </dt>
+                            <dd>
+                                <strong>
+                                    这是真正懂教育的人设计出来的英语教学系统！
+                                </strong>
+                                <p>
+                                    <span>-世纪星幼儿园</span><br />
+                                    上海
+                                </p>
+                            </dd>
+                        </dl>
                     </div>
                 </div>
-                <div data-src="/mobile/images/page-1_slide02.jpg">
-                    <div class="camera_caption fadeIn">
-                        <div class="container">
-                            <div class="bg-secondary">
-                                <h2>随时随地，立享美国课堂</h2>
-                                <p>和全球100万小朋友</p>
-                                <p>一起体验纯正的美式课堂</p>
-                                <a class="btn" href="/mobile/nav/Introduction.htm">了解更多</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-src="/mobile/images/page-1_slide03.jpg">
-                    <div class="camera_caption fadeIn">
-                        <div class="container">
-                            <div class="bg-secondary">
-                                <h2>让英语能力超越你的想象</h2>
-                                <p>自适应系统，11个学习模块</p>
-                                <p>8年美国课堂教学</p>
-
-                                <a class="btn" href="/mobile/nav/Introduction.htm">了解更多</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="pagination">
             </div>
         </div>
-    <!--========================================================
-                              CONTENT
-    =========================================================-->
-    <main>
-        <section class="well">
-            <div class="container">
-                <div class="row">
-                    <div class="grid_4 bg-primary bg-primary_hover wow fadeInLeft" data-wow-delay="1.3s " data-equal-group="1">
-                        <a href="/mobile/nav/system1.htm">
-                            <div class="section1">
-                                <h2>4-6岁</h2>
-                                <p class="p1">幼儿英语</p>
-                            </div>
-                            <img class="img_ablso1" src="/mobile/images/page-1_img01.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="grid_4 bg-primary bg-primary_hover wow fadeInUp" data-wow-delay="1.5s" data-equal-group="1">
-                         <a href="/mobile/nav/system2.htm">
-                            <div class="section1">
-                                <h2>7-9岁</h2>
+    </div>
+    <div class="mianfei cl">
+        <div class="mianfeil fl">
+            <dl>
+                <dd>
+                    <strong>免费试用</strong>
+                    <p>
+                        手机/电脑/平板，每天 20-30分钟碎片式学习方式，想学就学，试用一下，就会爱上！
+                    </p>
+                </dd>
+                <dt style=" padding: 0; width: 170px; padding-top: 6px;">
+                    <a href="/nav/reg.htm"><img src="/static/img/jksq.png" /></a>
+                </dt>
+            </dl>
+        </div>
+        <div class="mianfeim fl">
+            <dl>
+                <dd>
+                    <a href="/nav/buy.htm">
+                        <strong>立即购买</strong>
 
-                                <p class="p1">少儿英语</p>
-                            </div>
-                            <img class="img_ablso2" src="/mobile/images/page-1_img02.png" alt=""/>
-                        </a>    
-                    </div>
-                    <div class="grid_4 bg-primary bg-primary_hover wow fadeInRight" data-wow-delay="1.3s" data-equal-group="1">
-                        <a href="/mobile/nav/system3.htm">
-                            <div class="section1">
-                                <h2>10-15岁</h2>
-                                <p class="p1">青少年英语</p>
-                            </div>
-                            <img class="img_ablso3" src="/mobile/images/page-1_img03.png" alt=""/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="well1 center">
-            <div class="container">
-
-                <h3 class="h33"><span>美国自适应互动教学系统</span></h3>
-
-                <h4 class="h4">全球100多万个孩子见证学习效果</h4>
-
-                <p>基于美国共同核心标准Common Core（相当于美国英语教学大纲），适用于4-15岁孩子，先进自适应系统实现真正的因材施教，足不出户立享美国课堂。11年持续更新与研发，广泛应用于美国多个州的课堂教学，畅行十多个国家，全球已有100多万个孩子从中受益！</p>
-
-                <h3 class="h3"><span>孩子学习英语的上好礼物</span></h3>
-
-                <h4 class="h4">解放家长，解放孩子，快乐学习</h4>
-
-                <p>节省每周送孩子去培训班在路上及等候的精力和时间、不用担心培训班外教的频繁更换、一目了然查看孩子的学习效果，海量动画和高清视频让孩子没有学习的枯燥感，同龄孩子就是孩子最好的老师。随时随地，想学就学，从此，爸妈再也不用为孩子学习英语发愁了！</p>
-                <h3 class="h3"><span>6大优势孩子轻松爱上英语</span></h3>
-
-                <h4 class="h4">为孩子定制英语专属课程</h4>
-                <div class="">
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="0.2s">
-                        <span class="span">1</span>
-                        <h5><span class="ins_media">先进的自适应系统</span></h5>
-
-                        <p>根据每人情况自动生成不同教学内容，100个人就有100种课程，真正的量身定制！</p>
-
-                    </div>
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="0.4s">
-                        <span class="span">2</span>
-                        <h5><span class="ins_media">高品质海量视频</span></h5>
-
-                        <p>6000多部由美国好莱坞动画团队操刀制作的动画及视频，让孩子在视觉的盛宴中享受学习英语的乐趣！</p>
-
-                    </div>
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="0.6s">
-                        <span class="span">3</span>
-                        <h5><span class="ins_media">孩子教孩子</span></h5>
-
-                        <p>没有年龄隔阂，思维方式接近，行动习惯相符，小老师教学更容易取得大效果！</p>
-
-                    </div>
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="0.8s">
-                        <span class="span">4</span>
-                        <h5><span class="ins_media">人性化纠错</span></h5>
-
-                        <p>不是简单判断对与错，错了换个方式继续学，心理学与教育学双重保障！</p>
-
-                    </div>
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="1s">
-                        <span class="span">5</span>
-                        <h5><span class="ins_media">巨额收入做研发</span></h5>
-
-                        <p>每年上亿元的费用投入研发，保证系统不断更新，让学习内容更全面、更新颖、更科学！</p>
-
-                    </div>
-                    <div class="grid_4 wow fadeInUp" data-wow-delay="1.2s">
-                        <span class="span">6</span>
-                        <h5><span class="ins_media">完善的后台报告系统</span></h5>
-
-                        <p>所学内容与未学内容一目了然，对薄弱内容提供针对性辅导，直观查看孩子的学习效果！</p>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-secondary center">
-            <ul class="social">
-                <li><a href="#" class=""></a></li>
+                        <p>
+                            每天仅需15.89元，看孩子英语的明显改变！更有机会获得精美礼品！
+                        </p>
+                    </a>
+                </dd>
+                <dt>
+                    <img src="/static/img/mp_57.png" />
+                </dt>
+            </dl>
+        </div>
+        <div class="mianfeir fl">
+            <dl>
+                <dd>
+                    <strong>关注微信</strong>
+                    <p>
+                        扫一扫，绑定账号， 随时了解孩子学习状况！
+                    </p>
+                </dd>
+                <dt>
+                    <img src="/static/img/Main-page_60.png" />
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <div class="dingjizj cl">
+        <div class="dingjizjc cl">
+            <ul>
+                <li>
+                    <span>
+                        <img src="/static/img/mp_66.png" />
+                    </span><strong>4</strong>
+                    <p>
+                        大领域优秀专家
+                    </p>
+                </li>
+                <li>
+                    <span>
+                        <img src="/static/img/mp_66.png" />
+                    </span><strong>10</strong>
+                    <p>
+                        多个国家
+                    </p>
+                </li>
+                <li>
+                    <span>
+                        <img src="/static/img/mp_66.png" />
+                    </span><strong>12</strong>
+                    <p>
+                        年研发创新
+                    </p>
+                </li>
+                <li>
+                    <span>
+                        <img src="/static/img/mp_66.png" />
+                    </span><strong>400+</strong>
+                    <p>
+                        员工
+                    </p>
+                </li>
+                <li>
+                    <span>
+                        <img src="/static/img/mp_66.png" />
+                    </span><strong>1,000,000+</strong>
+                    <p>
+                        学习使用者
+                    </p>
+                </li>
             </ul>
-        </section>
-    </main>
-        <section class='bg-primary copyright center'>
-            <p class="bottom_p">沪ICP备15001581号 &#169; <span id="copyright-year"></span>.
-                <a href="javascript:;">宜美吉教育软件版权所有</a>
-                <!-- {%FOOTER_LINK} -->
-            </p>
-        </section>
-</div>
-<script src="/mobile/js/script.js"></script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?fa18eb686cba5ec49d1f07db8be8578b";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
+        </div>
+    </div>
+    <div class="zdaohang cl">
+        <img src="/static/img/mp_70.png" />
+    </div>
+    <!--#include file="/nav/footer.htm"-->
+    <div class="rigfie">
+        <span class="backtop">
+            <img src="/static/img/fwms_37.png" alt="返回顶部" />
+        </span>
+    </div>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?fa18eb686cba5ec49d1f07db8be8578b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </body>
 </html>

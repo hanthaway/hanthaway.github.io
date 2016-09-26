@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>美国想象力英语</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/mobile/css/grid.css">
+    <link rel="stylesheet" href="/mobile/css/style.css">
+    <link rel="stylesheet" href="/mobile/css/search.css">
+    <link rel="stylesheet" href="/mobile/css/camera.css">
+    <link rel="stylesheet" href="/mobile/css/owl-carousel.css">
+    <script src="/mobile/js/jquery.js"></script>
+    <script src="/mobile/js/jquery-migrate-1.2.1.js"></script>
+    <script src='/mobile/js/device.min.js'></script>
+    <style type="text/css">
+     @media (min-width: 375px and max-width: 479px) {
+          body {
+            padding: 0;
+          }
+
+          .container, .container-fluid {
+            width: 300px;
+            padding: 0 15px;
+          }
+
+          .row {
+            margin-left: 0;
+          }
+      }
+       @media (min-width: 320px and max-width: 374px;) {
+          body {
+            padding: 0;
+          }
+
+          .container, .container-fluid {
+            width: 280px;
+            padding: 0 15px;
+          }
+          .row {
+            margin-left: 0;
+          }
+       }
+      .txt1{margin-top: 5px;}
+      .txt2{margin-top: 5px;}
+      .head{font-size: 18px;margin-top: 20px;}
+       h1{padding-top: 40px;}
+      .p1{margin-bottom: 20px;}
+      .left{text-align: left;}
+      select{width: 100%;height: 32px;margin-top: 20px;}
+      .span{display: block;width: 40px;height: 40px;background: red;margin: 0 auto;line-height: 40px;font-size: 20px;color: #fff;margin-top: 30px;margin-bottom: 10px;}
+      .user{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
+      .pass{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
+      .name{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
+      .yzm{width: 57%;height: 32px;margin: 20px 0 10px 0;font-size: 16px;float: left;}
+      .btn1{width: 40%;height: 38px;margin: 20px 0 10px 0;font-size: 16px;float: left;text-align: center;padding: 0 2px;margin-left: 2px;}
+      .btn{width: 100%;height: 32px;font-size: 16px;margin-top: 20px;color: #fff;border: none;border-radius: 4px;background: #f03839;outline:none;}
+      input:focus {
+          outline:none;
+      }
+    </style>
+</head>
+
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <!--#include file="/mobile/nav/header.htm"-->
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+    <main>
+        <section class="well1 center">
+            <div class="container" style="overflow:hidden">
+                <h1><img src="/mobile/images/logo_l.png" alt="美国想象力英语"></h1>
+                <div class="head">您好，申请试用帐号需要三个步骤</div>
+                <div class="txt1">第一步：注册帐号</div>
+                <input type="hidden" id="hidVal" />
+                <input type="hidden" id="hidMobile" />
+                <input type="hidden" id="hidTime" />
+                <input type="text" class="user"  placeholder="手机号（必须填写）" id="mobile">
+                <div style="text-align:left;color:red;font-size:14px;margin:0px 0 10px 0"></div>
+                <div class="box" style="overflow:hidden" id="box">
+                  <input type="text" style="width:100px;float:left;height:30px;vertical-align:middle;margin-right:20px" placeholder="验证码" id="code"><span style="float:left"><a href="javascript:changeImg();"><img src="http://www.4006688991.com:85/ValiCode.asmx/GetImgStream?374" alt="" id="img"></a></span>
+                </div>
+                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
+                <input type="password" class="pass" placeholder="密码（可选）" id="pwd">
+                <div style="text-align:left;color:red;font-size:14px;margin:0px 0 10px 0"></div>
+                <input type="text" class="name" placeholder="姓名（必须填写）" id="name">
+                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
+                <div id="box1">
+                     <input type="text" class="yzm" placeholder="验证码" id="phone_code">
+                     <input type="button" value="获取验证码" class="btn1" id="getCode">
+                </div>
+                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
+                <div class="left">英语基础相当于</div>
+                <select id="selBasic">
+                	<option>- 请选择 -</option>
+                	<option>学了0年</option>
+                	<option>学了1年</option>
+                	<option>学了2年</option>
+                	<option>学了3年</option>
+                	<option>学了4年</option>
+                	<option>学了5年</option>
+                	<option>学了6年</option>
+                	<option>学了7年</option>
+                </select>
+                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
+                <input type="button" value="提交" class="btn" id="btnOk">
+            </div>
+        </section>    
+        <section class="bg-secondary center">
+            <ul class="social">
+                <li><a href="javascript:;" class=""></a></li>
+            </ul>
+        </section>
+    </main>
+        <section class='bg-primary copyright center'>
+            <p class="bottom_p">沪ICP备15001581号 &#169; <span id="copyright-year"></span>.
+                <a href="javascript:;">宜美吉教育软件版权所有</a>
+                <!-- {%FOOTER_LINK} -->
+            </p>
+        </section>
+</div>
+
+<script src="/mobile/js/script.js"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7078796-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+     var serviceUrl = "http://www.4006688991.com:85";
+        $(function () {
+            changeImg();
+            $("#mobile").blur(function () {
+                var mobile2 = $("hidMobile").val();
+                var hid = $("#hidVal").val();
+                var mobile = $(this).val();
+                var obj = $(this);
+                if (mobile == mobile2 && hid == 1) {
+                    errorMsg(obj, "该手机号码注册数量达到上限");
+                    changeImg();
+                    return;
+                }
+
+                if ($.trim(mobile) == "") {
+                    errorMsg(obj, "请输入手机号");
+                    changeImg();
+                    return;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: serviceUrl + "/StudentReg.asmx/CheckMobile",
+                    dataType: "jsonp",
+                    data: { "strPhone": mobile },
+                    jsonp: "para",
+                    jsonpCallback: "checkMobile",
+                    error: function OnError() { }
+                });
+            });
+            $("#mobile").focus(function(){
+               errorMsg($("#mobile"), "");
+            });
+
+            $("#getCode").click(function () {
+                var hid = $("#hidVal").val();
+                var code = $("#code").val();
+                var obj = $(this);
+                if (parseInt(hid) > 0) {
+                    errorMsg(obj, "请输入正确的手机号!");
+                    changeImg();
+                    return;
+                }
+                if ($.trim(code) == "") {
+                    errorMsg($("#box"), "请输入验证码");
+                    return;
+                }
+                var t = $("#hidTime").val();
+                if (t != "") {
+                    var d1 = new Date(t);
+                    var d2 = new Date();
+                    // var d = GetDateDiff(d1, d2);
+                    // if (d < 10) {
+                    //     errorMsg(obj, "短信的有效期为10分钟，请勿重复获取!");
+                    //     return;
+                    // }
+                }
+                var mobile = $("#mobile").val();
+                $.ajax({
+                    url: serviceUrl + "/StudentReg.asmx/SendSmsWidthCode",
+                    dataType: "jsonp",
+                    data: { "strPhone": mobile, "code": code },
+                    jsonp: "para",
+                    jsonpCallback: "sendSms",
+                    error: function OnError() { }
+                });
+            });
+
+            $("#btnOk").click(function () {
+                var hid = $("#hidVal").val();
+                if (hid != "0") {
+                    return;
+                }
+                var mobile = $("#mobile").val();
+                if ($.trim(mobile) == "") {
+                    errorMsg($("#mobile"), "请输入正确的手机号");
+                    return;
+                }
+                var code2 = $("#code").val();
+                if ($.trim(code2) == "") {
+                    errorMsg($("#box"), "请输入验证码");
+                    return;
+                }
+                var code = $("#phone_code").val();
+                if ($.trim(code) == "") {
+                    errorMsg($("#box1"), "请输入验证码");
+                    return;
+                }
+                var pwd = $("#pwd").val();
+                if ($.trim(pwd) == "") {
+                    errorMsg($("#pwd"), "请输入密码");
+                    return;
+                }
+                var txtName = $("#name").val();
+                if ($.trim(txtName) == "") {
+                    errorMsg($("#name"), "请输入姓名");
+                    return;
+                }
+                var selBasic = $("#selBasic option:selected").val();
+                if (selBasic == -1) {
+                    errorMsg($("#selBasic"), "请选择英语基础");
+                    return;
+                }
+                $.ajax({
+                    url: serviceUrl + "/StudentReg.asmx/StudentRegsitWidthCode",
+                    dataType: "jsonp",
+                    data: { "studentName": txtName, "strPhone": mobile, "pwd": pwd, "strBasic": selBasic, "VerifCode": code, "code": code2 },
+                    jsonp: "para",
+                    jsonpCallback: "regist",
+                    error: function OnError() { }
+                });
+
+
+            })
+        })
+
+
+        function regist(data) {
+            if (data.code == "-1") {
+                changeImg();
+                errorMsg($("#code"), "验证码错误");
+                return;
+            }
+            if (data.code == "0") {
+                errorMsg($("#name"), "请输入姓名");
+                changeImg();
+                return;
+            }
+            if (data.code == "1") {
+                errorMsg($("#mobile"), "请输入正确的手机号");
+                changeImg();
+                return;
+            }
+            if (data.code == "2") {
+                errorMsg($("#pwd"), "请输入密码");
+                changeImg();
+                return;
+            }
+            if (data.code == "3") {
+                $("#hidVal").val("1");
+                errorMsg($("#mobile"), "请输入密码");
+                changeImg();
+                return;
+            }
+            if (data.code == "4") {
+                errorMsg($("#mobile"), "该账号已被注册");
+                changeImg();
+                return;
+            }
+            if (data.code == "5") {
+                errorMsg($("#getCode"), "请获短信取验证码");
+                changeImg();
+                return;
+            }
+            if (data.code == "6") {
+                errorMsg($("#getCode"), "验证码已过期或验证码错误");
+                changeImg();
+                return;
+            }
+            if (data.code == "8") {
+                errorMsg($("#mobile"), "验证码已过期或验证码错误");
+                changeImg();
+                return;
+            }
+            if (data.code == "7") {
+                alert("注册成功!");
+                $("#msgLi").text("注册成功!");
+                errorMsg($("#mobile"), "注册成功");
+                var name = $("#mobile").val();
+                window.top.location = "http://www.4006688991.com";
+                return;
+            }
+
+        }
+
+        function sendSms(data) {
+            var obj = $("#phone_code");
+            var obj2 = $("#box");
+            if (data.statusCode == "-4") {
+                changeImg();
+                errorMsg(obj2, "请输入正确的验证码!");
+                return;
+            }
+            if (data.statusCode == "-1") {
+                changeImg();
+                errorMsg(obj, "验证码发送失败，请稍后再试!");
+                return;
+            }
+            if (data.statusCode == "-2") {
+                changeImg();
+                errorMsg(obj, "手机格式错误");
+                return;
+            }
+            if (data.statusCode != "000000") {
+                errorMsg(obj, "验证码发送失败，请稍后再试!");
+                changeImg();
+                return;
+            }
+            if (data.statusCode == "000000") {
+                errorMsg(obj, "验证码已发送,请稍后!");
+                clearMsg(obj2);
+                $("#hidTime").val(new Date());
+                return;
+            }
+        }
+
+        function errorMsg(obj, msg) {
+            $(obj).next().text(msg);
+        }
+
+        function clearMsg(obj) {
+            $(obj).parent().parent().removeClass("on");
+            $(obj).parent().parent().children(".dd2").children("span").text("");
+        }
+
+        function checkMobile(data) {
+            var obj = $("#mobile");
+            if (data.code == "1") {
+                $("#hidVal").val("2");
+                errorMsg(obj, "手机号码格式错误!");
+                $("#mobile").focus();
+                return;
+            }
+            if (data.code == "3") {
+                $("#hidVal").val("0");
+                $("#mobile").val(data.accountName);
+                return;
+            }
+            if (data.code == "4") {
+                $("#hidVal").val("1");
+                errorMsg(obj, "该手机号码注册数量达到上限!");
+                return;
+            }
+            if (data.code == "2") {
+                $("#hidVal").val("0");
+                clearMsg(obj);
+                $("#mobile").val(data.accountName);
+                return;
+            }
+        }
+
+
+        function changeImg() {
+            $("#img").attr("src", serviceUrl + "/ValiCode.asmx/GetImgStream?" + new Date().getMilliseconds());
+
+        }
+
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?fa18eb686cba5ec49d1f07db8be8578b";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

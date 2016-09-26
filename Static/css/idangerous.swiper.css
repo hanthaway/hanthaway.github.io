@@ -1,0 +1,300 @@
+.device {
+  width: 1200px;
+	height:840px;
+  padding: 0px 0px;
+  border-radius: 0px;
+  border: 0px solid white;
+  text-align:left;
+   clear:both;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+}
+.device .arrow-left {
+  background:url(/static/img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+   z-index:1000;
+}
+.device .arrow-right {
+  background: url(/static/img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index:1000;
+}
+.device .swiper-container {
+ width: 1200px;
+	height: 840px;
+}
+.content-slide {
+  padding: 0px;
+  color: #fff;
+}
+.title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.pagination {
+  position: absolute;
+  left: 0;
+   z-index:1000;
+  text-align: center;
+  bottom:15px;
+  width: 100%;
+   z-index:1000;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #b4b4b5;
+  box-shadow: 0px 1px 2px #555 inset;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: #e10012;
+}
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	 position:relative;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-slide img{ width:100%; }
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+
+.device1 {
+  width: 1200px;
+	height:840px;
+  padding: 0px 0px;
+  border-radius: 0px;
+  border: 0px solid white;
+  text-align:left;
+   clear:both;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+}
+.device1 .arrow-left {
+  background:url(/static/img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+   z-index:1000;
+}
+.device1 .arrow-right {
+  background: url(/static/img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index:1000;
+}
+.device1 .swiper-container {
+ width: 1200px;
+	height: 840px;
+}
+
+
+
+
+.device2 {
+  width: 1200px;
+	height:300px;
+  padding: 0px 0px;
+  border-radius: 0px;
+  border: 0px solid white;
+  text-align:left;
+   clear:both;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+}
+.device2 .arrow-left {
+  background:url(/static/img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+   z-index:1000;
+}
+.device2 .arrow-right {
+  background: url(/static/img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index:1000;
+}
+.device2 .swiper-container {
+ width: 1200px;
+	height: 300px;
+	
+}
+
+
+
+
+.device3 {
+  width: 100%;
+	height:500px;
+  padding: 0px 0px;
+  border-radius: 0px;
+  border: 0px solid white;
+  text-align:left;
+   clear:both;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+}
+.device3 .arrow-left {
+  background:url(/static/img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+   z-index:1000;
+}
+.device3 .arrow-right {
+  background: url(/static/img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index:1000;
+}
+.device3 .swiper-container {
+ width: 100%;
+	height: 500px;
+	
+}
+
+
+
+
+
+
+.device4 {
+  width: 100%;
+	height:500px;
+  padding: 0px 0px;
+  border-radius: 0px;
+  border: 0px solid white;
+  text-align:left;
+   clear:both;
+  position: relative;
+  box-shadow: 0px 0px 0px #000;
+}
+.device4 .arrow-left {
+  background:url(/static/img/arrows.png) no-repeat left top;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+   z-index:1000;
+}
+.device4 .arrow-right {
+  background: url(/static/img/arrows.png) no-repeat left bottom;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+   display:none;
+  margin-top: -15px;
+  width: 17px;
+  height: 30px;
+  z-index:1000;
+}
+.device4 .swiper-container {
+ width: 100%;
+	height: 500px;
+	
+}

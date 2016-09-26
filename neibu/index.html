@@ -1,0 +1,94 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+    <style>
+        body {
+            font-size: 2em;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+            .row .row {
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+
+        [class*="col-"] {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #eee;
+            background-color: rgba(86,61,124,.15);
+            border: 1px solid #ddd;
+            border: 1px solid rgba(86,61,124,.2);
+        }
+
+        [class*="row"] {
+            height: 0px;
+            padding-bottom: auto;
+        }
+
+        .btn {
+            font-size: 1em;
+            padding-left: 0px;
+            padding-right: 0px;
+            display: block;
+        }
+    </style>
+    <script>
+        var player = null;
+        $(function () {
+            $(".btn").click(function () {
+                $(".overlay").show();
+                var url = $(this).attr('uid')
+                player = new YKU.Player('youkuplayer', {
+                    styleid: '8',
+                    client_id: '8f7ebd773f767d3e',
+                    autoplay: true,
+                    vid: url
+                });
+            })
+            $(".overlay").click(function (e) {
+                $(".overlay").hide();
+                player.pauseVideo();
+            })
+
+            $(".error").click(function (e) {
+                e.stopPropagation();
+            })
+            $(".youkuplayer").click(function (e) {
+                e.stopPropagation();
+            })
+        })
+    </script>
+    <title>内部资料</title>
+</head>
+<body>
+    <div class="container">
+        <h1>内部资料</h1>
+        <div class="row">
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQ4MDc4MjQzNg==' class='btn'>2016年2月16号公司培训1</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQ0NjkyOTQwMA==' class='btn'>Haisea杭州宣讲20151217</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQ0NjM3MDI3Mg==' class='btn'>Haisea钱江晚报宣讲20160115</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQ0NzExNDAyMA==' class='btn'>Haisea讲解学习报告</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQwOTE0ODMxNg==' class='btn'>Haisea培训20151209</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQwMTcxNjMzMg==' class='btn'>Simon培训26个字母标准发音</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTQ4MDU1MDg2OA==' class='btn'>IL系统报告</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTM2NDMxMDAzNg==' class='btn'>Simon课堂20151019(手机拍摄)</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTM2NDQyNjM0OA==' class='btn'>Kevin对学校机构的内部培训20150902</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTM2NDY0NTkzNg==' class='btn'>Haisea宣讲</a></div>
+            <div class="col-md-12"><a href="javascript:void();" uid='XMTM3ODE5ODUyNA==' class='btn'>美国想象力英语Kevin介绍片</a></div>
+        </div>
+        <div class='overlay' style='top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6) none repeat scroll 0% 0%; z-index: 9999; position: fixed; display: none;'><div class='error' style='position: fixed; z-index: 10000; left:50%;top:20%;margin-left:-200;margin-top:-50; width: 450px; padding: 10px; border-radius: 5px; background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); text-align: center; font-size: 14px; word-break: break-all; box-sizing: border-box; '><div id="youkuplayer" style="width: 420px; height: 400px; margin: 0 auto;"></div></div></div>
+    </div>
+</body>
+</html>

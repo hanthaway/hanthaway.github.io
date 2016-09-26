@@ -1,0 +1,83 @@
+﻿.fancybox-overlay {
+    overflow: auto;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    z-index: 8010;
+    background: url('/static/img/fancybox_overlay.png');
+}
+
+.fancybox-overlay-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.fancybox-opened {
+    z-index: 8030;
+    width: 53%;
+	max-width: 1920px;
+	min-width: 800px;
+    position: absolute;
+	    margin: -240px 0 0 -24%;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    overflow: visible;
+}
+
+.fancybox-skin {
+    -webkit-box-shadow: 0 10px 25px white;
+    -moz-box-shadow: 0 10px 25px white;
+    box-shadow: 0 10px 25px white;
+}
+
+.fancybox-outer {
+    position: relative;
+}
+
+.fancybox-inner {
+    overflow: visible;
+}
+
+.fancybox-close {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 8040;
+}
+
+.fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: url('/static/img/fancybox_sprite.png');
+}
+
+.tips {
+    width: 300px;
+    font-size: 13px;
+    display: none;
+    background-color: #000;
+    border: 1px solid #000;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    padding-left: 10px;
+    padding: 5px;
+}
+
+    .tips label {
+        color: red;
+    }
+
+
+.playIco {
+    position: absolute;
+    z-index: 100;
+    margin-left: -30px;
+    height: 32px;
+    width: 32px;
+}

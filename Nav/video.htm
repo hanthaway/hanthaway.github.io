@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.kingball.net/css/common.css">
+</head>
+<body>
+    <div class="content_box">
+        <div class="basketball_left">
+            <div id="youkuplayer" style="width:624px;height:426px"></div>
+        </div>
+        <div class="basketball_right" id="basketball_right">
+            <div>
+                <div class="l"><a href="javascript:;"><img src="../img/ball1.jpg"></a></div>
+                <div class="r">
+                    <a href="javascript:;">Kingball智慧篮球</a>
+                    <div class="div1"><i class="i1"></i><span>金月轮少儿智慧篮球</span></div>
+                    <div class="div2"><i class="i2"></i><span>790</span><i class="i3"></i><span>10</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="l"><a href="javascript:;"><img src="../img/ball2.jpg"></a></div>
+                <div class="r">
+                    <a href="javascript:;">上海金月轮少儿篮球俱乐部宣传片</a>
+                    <div class="div1"><i class="i1"></i><span>金月轮少儿智慧篮球</span></div>
+                    <div class="div2"><i class="i2"></i><span>790</span><i class="i3"></i><span>10</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="l"><a href="javascript:;"><img src="../img/ball3.jpg"></a></div>
+                <div class="r">
+                    <a href="javascript:;">上海金月轮少儿篮球俱乐部宣传片_高清</a>
+                    <div class="div1"><i class="i1"></i><span>金月轮少儿智慧篮球</span></div>
+                    <div class="div2"><i class="i2"></i><span>790</span><i class="i3"></i><span>10</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="l"><a href="javascript:;"><img src="../img/ball4.jpg"></a></div>
+                <div class="r">
+                    <a href="javascript:;">上海金月轮少儿智慧篮球Martin教练</a>
+                    <div class="div1"><i class="i1"></i><span>金月轮少儿智慧篮球</span></div>
+                    <div class="div2"><i class="i2"></i><span>790</span><i class="i3"></i><span>10</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var arr = ['XMTU0MDE4MjEyNA', 'XMTU0MDE4MjEyNA', 'XMTQ4MjUzMTA2NA', 'XMTQ5NTg5MjI5Mg'];
+        var aVideo = document.getElementById('basketball_right').getElementsByTagName('a');
+        var index;
+        player = new YKU.Player('youkuplayer', {
+            client_id: '8f7ebd773f767d3e',
+            vid: 'XMTQ3OTc3NjMyNA',
+            autoplay: true,
+            events: {
+                onPlayEnd: function () {
+                    index = 1;
+                    video(index);
+                }
+            }
+        });
+        //  function end(){
+        //     video(arr[index]);
+        //  }
+
+        //  aVideo[0].onclick=aVideo[1].onclick=function(){
+        //    index=1;
+        //    video(arr[0]);
+        //  };
+
+        // aVideo[2].onclick=aVideo[3].onclick=function(){
+        //    index=2;
+        //    video(arr[1]);
+        //  };
+        // aVideo[4].onclick=aVideo[5].onclick=function(){
+        //    index=3;
+        //    video(arr[2]);
+        // };
+        // aVideo[6].onclick=aVideo[7].onclick=function(){
+        //    index=0;
+        //    video(arr[3]);
+        //};
+        function video(id) {
+            index = id + 1;
+            if (index >= arr.length) {
+                return;
+            }
+            player = new YKU.Player('youkuplayer', {
+                styleid: '0',
+                client_id: '8f7ebd773f767d3e',
+                vid: arr[id],
+                autoplay: true,
+                events: {
+                    onPlayEnd: video(index)
+                }
+            });
+        }
+    </script>
+</body>
+</html>

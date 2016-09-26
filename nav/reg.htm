@@ -1,143 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>美国想象力英语</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="/mobile/css/grid.css">
-    <link rel="stylesheet" href="/mobile/css/style.css">
-    <link rel="stylesheet" href="/mobile/css/search.css">
-    <link rel="stylesheet" href="/mobile/css/camera.css">
-    <link rel="stylesheet" href="/mobile/css/owl-carousel.css">
-    <script src="/mobile/js/jquery.js"></script>
-    <script src="/mobile/js/jquery-migrate-1.2.1.js"></script>
-    <script src='/mobile/js/device.min.js'></script>
-    <style type="text/css">
-     @media (min-width: 375px and max-width: 479px) {
-          body {
-            padding: 0;
-          }
-
-          .container, .container-fluid {
-            width: 300px;
-            padding: 0 15px;
-          }
-
-          .row {
-            margin-left: 0;
-          }
-      }
-       @media (min-width: 320px and max-width: 374px;) {
-          body {
-            padding: 0;
-          }
-
-          .container, .container-fluid {
-            width: 280px;
-            padding: 0 15px;
-          }
-          .row {
-            margin-left: 0;
-          }
-       }
-      .txt1{margin-top: 5px;}
-      .txt2{margin-top: 5px;}
-      .head{font-size: 18px;margin-top: 20px;}
-       h1{padding-top: 40px;}
-      .p1{margin-bottom: 20px;}
-      .left{text-align: left;}
-      select{width: 100%;height: 32px;margin-top: 20px;}
-      .span{display: block;width: 40px;height: 40px;background: red;margin: 0 auto;line-height: 40px;font-size: 20px;color: #fff;margin-top: 30px;margin-bottom: 10px;}
-      .user{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
-      .pass{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
-      .name{width: 100%;height: 32px;margin: 20px 0 10px 0;font-size: 16px}
-      .yzm{width: 57%;height: 32px;margin: 20px 0 10px 0;font-size: 16px;float: left;}
-      .btn1{width: 40%;height: 38px;margin: 20px 0 10px 0;font-size: 16px;float: left;text-align: center;padding: 0 2px;margin-left: 2px;}
-      .btn{width: 100%;height: 32px;font-size: 16px;margin-top: 20px;color: #fff;border: none;border-radius: 4px;background: #f03839;outline:none;}
-      input:focus {
-          outline:none;
-      }
-    </style>
-</head>
-
-<body>
-<div class="page">
-    <!--========================================================
-                              HEADER
-    =========================================================-->
-    <!--#include file="/mobile/nav/header.htm"-->
-    <!--========================================================
-                              CONTENT
-    =========================================================-->
-    <main>
-        <section class="well1 center">
-            <div class="container" style="overflow:hidden">
-                <h1><img src="/mobile/images/logo_l.png" alt="美国想象力英语"></h1>
-                <div class="head">您好，申请试用帐号需要三个步骤</div>
-                <div class="txt1">第一步：注册帐号</div>
-                <input type="hidden" id="hidVal" />
-                <input type="hidden" id="hidMobile" />
-                <input type="hidden" id="hidTime" />
-                <input type="text" class="user"  placeholder="手机号（必须填写）" id="mobile">
-                <div style="text-align:left;color:red;font-size:14px;margin:0px 0 10px 0"></div>
-                <div class="box" style="overflow:hidden" id="box">
-                  <input type="text" style="width:100px;float:left;height:30px;vertical-align:middle;margin-right:20px" placeholder="验证码" id="code"><span style="float:left"><a href="javascript:changeImg();"><img src="http://www.4006688991.com:85/ValiCode.asmx/GetImgStream?374" alt="" id="img"></a></span>
-                </div>
-                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
-                <input type="password" class="pass" placeholder="密码（可选）" id="pwd">
-                <div style="text-align:left;color:red;font-size:14px;margin:0px 0 10px 0"></div>
-                <input type="text" class="name" placeholder="姓名（必须填写）" id="name">
-                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
-                <div id="box1">
-                     <input type="text" class="yzm" placeholder="验证码" id="phone_code">
-                     <input type="button" value="获取验证码" class="btn1" id="getCode">
-                </div>
-                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
-                <div class="left">英语基础相当于</div>
-                <select id="selBasic">
-                	<option>- 请选择 -</option>
-                	<option>学了0年</option>
-                	<option>学了1年</option>
-                	<option>学了2年</option>
-                	<option>学了3年</option>
-                	<option>学了4年</option>
-                	<option>学了5年</option>
-                	<option>学了6年</option>
-                	<option>学了7年</option>
-                </select>
-                <div style="text-align:left;color:red;font-size:14px;margin:10px 0 0 0"></div>
-                <input type="button" value="提交" class="btn" id="btnOk">
-            </div>
-        </section>    
-        <section class="bg-secondary center">
-            <ul class="social">
-                <li><a href="javascript:;" class=""></a></li>
-            </ul>
-        </section>
-    </main>
-        <section class='bg-primary copyright center'>
-            <p class="bottom_p">沪ICP备15001581号 &#169; <span id="copyright-year"></span>.
-                <a href="javascript:;">宜美吉教育软件版权所有</a>
-                <!-- {%FOOTER_LINK} -->
-            </p>
-        </section>
-</div>
-
-<script src="/mobile/js/script.js"></script>
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-7078796-5']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<script type="text/javascript">
-     var serviceUrl = "http://www.4006688991.com:85";
+    <title>免费注册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <link href="/static/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/ncss.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/camera.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/js.js" type="text/javascript"></script>
+    <script>
+        var serviceUrl = "http://www.4006688991.com:85";
         $(function () {
             changeImg();
             $("#mobile").blur(function () {
@@ -166,9 +39,7 @@
                     error: function OnError() { }
                 });
             });
-            $("#mobile").focus(function(){
-               errorMsg($("#mobile"), "");
-            });
+
 
             $("#getCode").click(function () {
                 var hid = $("#hidVal").val();
@@ -180,18 +51,18 @@
                     return;
                 }
                 if ($.trim(code) == "") {
-                    errorMsg($("#box"), "请输入验证码");
+                    errorMsg($("#code"), "请输入验证码");
                     return;
                 }
                 var t = $("#hidTime").val();
                 if (t != "") {
                     var d1 = new Date(t);
                     var d2 = new Date();
-                    // var d = GetDateDiff(d1, d2);
-                    // if (d < 10) {
-                    //     errorMsg(obj, "短信的有效期为10分钟，请勿重复获取!");
-                    //     return;
-                    // }
+                    var d = GetDateDiff(d1, d2);
+                    if (d < 10) {
+                        errorMsg(obj, "短信的有效期为10分钟，请勿重复获取!");
+                        return;
+                    }
                 }
                 var mobile = $("#mobile").val();
                 $.ajax({
@@ -216,12 +87,12 @@
                 }
                 var code2 = $("#code").val();
                 if ($.trim(code2) == "") {
-                    errorMsg($("#box"), "请输入验证码");
+                    errorMsg($("#code"), "请输入验证码");
                     return;
                 }
                 var code = $("#phone_code").val();
                 if ($.trim(code) == "") {
-                    errorMsg($("#box1"), "请输入验证码");
+                    errorMsg($("#phone_code"), "请输入验证码");
                     return;
                 }
                 var pwd = $("#pwd").val();
@@ -313,7 +184,7 @@
 
         function sendSms(data) {
             var obj = $("#phone_code");
-            var obj2 = $("#box");
+            var obj2 = $("#code");
             if (data.statusCode == "-4") {
                 changeImg();
                 errorMsg(obj2, "请输入正确的验证码!");
@@ -343,7 +214,8 @@
         }
 
         function errorMsg(obj, msg) {
-            $(obj).next().text(msg);
+            $(obj).parent().parent().addClass("on");
+            $(obj).parent().parent().children(".dd2").children("span").text(msg);
         }
 
         function clearMsg(obj) {
@@ -383,15 +255,190 @@
 
         }
 
-</script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?fa18eb686cba5ec49d1f07db8be8578b";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
+    </script>
+</head>
+<body>
+    <!--#include file="/nav/head.htm"-->
+    <a href="#div_reg"> <div class="kctyt cl" style="background: url(/static/img/kcty.jpg) no-repeat; cursor: pointer;"></div></a>
+    <div class="lingyu">
+        <p>
+            <strong>4</strong> 大领域专家<br />
+            <strong>11</strong>年不断研发和更新<br />
+            <strong>15</strong>种语言全面支持<br />
+            <strong>10</strong>多个国家的广泛应用<br />
+            超过 <strong>1000,000</strong> 孩子的有效体验……<br />
+            为了满足全世界孩子的英语学习与改变命运<br />
+            我们始终在坚持<br />
+            我们相信您的孩子也需要这个机会<br />
+        </p>
+    </div>
+    <div class="lingyux">
+        <ul>
+            <li>
+                <img src="/static/img/kctyan_05.png" />
+            </li>
+            <li>
+                <img src="/static/img/kctyan_07.png" />
+            </li>
+        </ul>
+    </div>
+    <div class="zcxtq cl">
+        <p>
+            现在注册，立享3天免费试用特权！
+
+        </p>
+        <p>3天试用，看孩子爱上英语的蜕变！</p>
+    </div>
+    <div class="jksq cl">
+        <strong class="red">
+            即刻申请<br />
+            立马改变
+        </strong>
+        <ul>
+            <li>
+                纯正美语学习环境，和美国小朋友一起成长；
+            </li>
+            <li>
+                真正为孩子量身定制的专属英语学习课程；
+            </li>
+            <li>
+                家长随时随地查看孩子学习进度和学习成果；
+            </li>
+            <li>
+                孩子变被动为主动爱上学习，惊喜变化不断；
+            </li>
+            <li>
+                每天坚持20-30分钟，见证英语水平持续提升。
+            </li>
+        </ul>
+    </div>
+    <div class="regg cl" id="div_reg">
+        <div class="reggl">
+            <img src="/static/img/kctyan_12.png" />
+        </div>
+        <input type="hidden" id="hidVal" />
+        <input type="hidden" id="hidMobile" />
+        <input type="hidden" id="hidTime" />
+        <div class="reggr">
+            <h1>
+                注册新账号
+            </h1>
+            <dl>
+                <dt>
+                    手机号码：
+                </dt>
+                <dd class="dd1">
+                    <input type="text" id="mobile" />
+                </dd>
+                <dd class="dd2">
+                    <span></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    验证码：
+                </dt>
+                <dd class="dd3">
+                    <input type="text" id="code" />
+                </dd>
+                <dd class="dd4">
+                    <span><a href="javascript:changeImg();"><img id="img" /></a></span>
+                </dd>
+                <dd class="dd2">
+                    <span></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    短信验证码：
+                </dt>
+                <dd class="dd3">
+                    <input type="text" id="phone_code" />
+                </dd>
+                <dd class="dd4">
+                    <span><a id="getCode">免费获取短信验证码</a></span>
+                </dd>
+                <dd class="dd2">
+                    <span></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    姓名：
+                </dt>
+                <dd class="dd3">
+                    <input type="text" id="name" />
+                </dd>
+                <dd class="dd2">
+                    <span>姓名太短</span>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    设置密码：
+                </dt>
+                <dd class="dd1">
+                    <input type="password" id="pwd" />
+                </dd>
+                <dd class="dd2">
+                    <span>密码长度太短!</span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    英语基础相当于：
+                </dt>
+                <dd class="dd1">
+                    <select id="selBasic">
+                        <option>请选择</option>
+                        <option>学了1年</option>
+                        <option>学了2年</option>
+                        <option>学了3年</option>
+                    </select>
+                </dd>
+                <dd class="dd2">
+                    <span>请选择英语基础!</span>
+                </dd>
+            </dl>
+            <dl class="dlls">
+                <dt>
+                    &nbsp;
+                </dt>
+                <dd class="dd1">
+                    <a class="btn" id="btnOk">提交</a>
+                </dd>
+            </dl>
+
+        </div>
+    </div>
+
+    <div class="sbottom cl">
+        <div class="sbottomc cl">
+            <dl>
+                <dt>
+                    <img src="/static/img/kctyan_16.png" />
+                </dt>
+                <dd>
+                    <strong>爱上英语，才能享受英语！</strong><br />
+                    <strong>马上为孩子开启TA的快乐学习之旅吧！</strong>
+                    <p>
+                        扫一扫，关注微信公众号“<span>美国想象力英语</span>”，即可快速了解、 体验、购买产品及联系我们。<br />
+                        我们期待与您共同见证您孩子的成长！
+                    </p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="h10 cl"></div>
+    <div class="zdaohang cl">
+        <img src="/static/img/mp_70.png" />
+    </div>
+    <!--#include file="/nav/footer.htm"-->
+    <!--<div class="rigfie">
+        <span class="backtop">
+            <img src="/static/img/fwms_37.png" alt="返回顶部" />
+        </span>
+    </div>-->
 </body>
 </html>
