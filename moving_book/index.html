@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        body {
+            background: #ccc;
+            margin: 0 auto;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+        }
+
+        #list {
+            position: relative;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+            #list li {
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+
+        .list img {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+
+        #list .img {
+            float: left;
+        }
+
+        #list .img3 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 319px;
+            height: 75px;
+            margin-left: -155px;
+        }
+
+        #list .img2 {
+            position: absolute;
+            top: 70%;
+            left: 2%;
+            width: 128px;
+            height: 43px;
+        }
+
+        #list .img1 {
+            position: absolute;
+            top: 70%;
+            right: 2%;
+            width: 134px;
+            height: 43px;
+        }
+
+        .p1 {
+            position: absolute;
+            top: 10px;
+            font-size: 30px;
+            color: #000;
+            width: 100%;
+            text-align: center;
+        }
+
+        .p2 {
+            position: absolute;
+            top: 60px;
+            font-size: 30px;
+            color: #000;
+            width: 100%;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .p3 {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+        }
+
+        .p4 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .p5 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .voice {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 370px;
+            width: 64px;
+        }
+
+            .voice img {
+                height: 100%;
+                width: 100%;
+                display: none;
+            }
+
+        .voice1 {
+            position: absolute;
+            left: 84px;
+            top: 0;
+            height: 375px;
+            width: 416px;
+        }
+
+            .voice1 img {
+                height: 100%;
+                width: 100%;
+                display: none;
+            }
+
+        .list .wkx1 {
+            position: absolute;
+            left: 73px;
+            top: 44px;
+            height: 304px;
+            width: 425px;
+            display: none;
+        }
+
+        .list .wkx2 {
+            position: absolute;
+            left: 31px;
+            bottom: 0px;
+            height: 136px;
+            width: 114px;
+            display: none;
+        }
+
+        .list .wkx3 {
+            position: absolute;
+            left: 180px;
+            bottom: 68px;
+            height: 216px;
+            width: 77px;
+            display: none;
+        }
+
+        .list .wkx4 {
+            position: absolute;
+            left: 94px;
+            bottom: 22px;
+            height: 271px;
+            width: 99px;
+            display: none;
+        }
+
+        .list .wkx5 {
+            position: absolute;
+            width: 62px;
+            height: 366px;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        .list .wkx6 {
+            position: absolute;
+            left: 327px;
+            bottom: 21px;
+            height: 101px;
+            width: 50px;
+            display: none;
+        }
+
+        .list .wkx7 {
+            position: absolute;
+            left: 298px;
+            bottom: 0px;
+            height: 68px;
+            width: 100px;
+            display: none;
+        }
+
+        .list .wkx8 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 293px;
+            width: 500px;
+            display: none;
+        }
+
+        .list .wkx9 {
+            position: absolute;
+            left: 108px;
+            top: 208px;
+            height: 103px;
+            width: 69px;
+            display: none;
+        }
+
+        .list .wkx10 {
+            position: absolute;
+            right: 26px;
+            top: 98px;
+            height: 163px;
+            width: 41px;
+            display: none;
+        }
+
+        .list .wkx11 {
+            position: absolute;
+            right: -2px;
+            top: 35px;
+            height: 194px;
+            width: 157px;
+            display: none;
+        }
+
+        .list .wkx12 {
+            position: absolute;
+            right: 220px;
+            top: 125px;
+            height: 61px;
+            width: 59px;
+            display: none;
+        }
+
+        .list .wkx13 {
+            position: absolute;
+            right: 7px;
+            top: 162px;
+            height: 63px;
+            width: 105px;
+            display: none;
+        }
+
+        .list .wkx14 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 184px;
+            width: 500px;
+            display: none;
+        }
+
+        .list .wkx15 {
+            position: absolute;
+            right: 153px;
+            top: 0px;
+            height: 120px;
+            width: 180px;
+            display: none;
+        }
+
+        .list .wkx16 {
+            position: absolute;
+            right: 245px;
+            top: 77px;
+            height: 261px;
+            width: 129px;
+            display: none;
+        }
+
+        .list .wkx17 {
+            position: absolute;
+            right: 180px;
+            bottom: 10px;
+            height: 179px;
+            width: 205px;
+            display: none;
+        }
+
+        .list .wkx18 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 113px;
+            width: 312px;
+            display: none;
+        }
+
+        .list .wkx19 {
+            position: absolute;
+            right: 0px;
+            bottom: 146px;
+            height: 161px;
+            width: 368px;
+            display: none;
+        }
+
+        .list .wkx20 {
+            position: absolute;
+            right: 208px;
+            bottom: 163px;
+            height: 149px;
+            width: 170px;
+            display: none;
+        }
+
+        .list .wkx21 {
+            position: absolute;
+            right: 173px;
+            bottom: 0px;
+            height: 205px;
+            width: 191px;
+            display: none;
+        }
+
+        .list .wkx22 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 108px;
+            width: 294px;
+            display: none;
+        }
+
+        .list .wkx23 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 375px;
+            width: 500px;
+            display: none;
+        }
+
+        .list .wkx24 {
+            position: absolute;
+            right: 86px;
+            bottom: 0px;
+            height: 271px;
+            width: 221px;
+            display: none;
+        }
+
+        .list .wkx25 {
+            position: absolute;
+            right: 157px;
+            bottom: 127px;
+            height: 140px;
+            width: 112px;
+            display: none;
+        }
+
+        .list .wkx26 {
+            position: absolute;
+            right: 0px;
+            top: 0;
+            height: 274px;
+            width: 206px;
+            display: none;
+        }
+
+        .list .wkx27 {
+            position: absolute;
+            right: 85px;
+            bottom: 0;
+            height: 353px;
+            width: 221px;
+            display: none;
+        }
+
+        .list .wkx28 {
+            position: absolute;
+            left: 178px;
+            top: 0;
+            height: 51px;
+            width: 68px;
+            display: none;
+        }
+
+        .list .wkx29 {
+            position: absolute;
+            left: 72px;
+            bottom: 0;
+            height: 193px;
+            width: 128px;
+            display: none;
+        }
+
+        .list .wkx30 {
+            position: absolute;
+            left: 92px;
+            bottom: 125px;
+            height: 133px;
+            width: 119px;
+            display: none;
+        }
+
+        .list .wkx31 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 269px;
+            width: 299px;
+            display: none;
+        }
+
+        .list .wkx32 {
+            position: absolute;
+            right: 135px;
+            bottom: 58px;
+            height: 254px;
+            width: 116px;
+            display: none;
+        }
+
+        .list .wkx33 {
+            position: absolute;
+            right: 256px;
+            bottom: 58px;
+            height: 254px;
+            width: 107px;
+            display: none;
+        }
+
+        .box1 {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            left: 90px;
+            bottom: 40px;
+            z-index: 2;
+        }
+
+        .box2 {
+            width: 150px;
+            height: 220px;
+            position: absolute;
+            left: 200px;
+            top: 45px;
+        }
+
+        .box3 {
+            width: 90px;
+            height: 120px;
+            position: absolute;
+            right: 0px;
+            top: 65px;
+        }
+
+        .box4 {
+            position: absolute;
+            left: 31px;
+            bottom: 0px;
+            height: 136px;
+            width: 70px;
+        }
+
+        .box5 {
+            position: absolute;
+            left: 180px;
+            bottom: 68px;
+            height: 216px;
+            width: 77px;
+        }
+
+        .box6 {
+            position: absolute;
+            left: 90px;
+            bottom: 15px;
+            height: 276px;
+            width: 101px;
+        }
+
+        .box7 {
+            position: absolute;
+            left: 327px;
+            bottom: 21px;
+            height: 101px;
+            width: 50px;
+        }
+
+        .box8 {
+            position: absolute;
+            left: 305px;
+            bottom: 0px;
+            height: 60px;
+            width: 100px;
+        }
+
+        .box9 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 200px;
+            width: 500px;
+        }
+
+        .box10 {
+            position: absolute;
+            left: 107px;
+            top: 222px;
+            height: 103px;
+            width: 69px;
+        }
+
+        .box11 {
+            position: absolute;
+            right: 26px;
+            top: 98px;
+            height: 163px;
+            width: 41px;
+        }
+
+        .box12 {
+            position: absolute;
+            right: 0px;
+            top: 38px;
+            height: 194px;
+            width: 157px;
+        }
+
+        .box13 {
+            position: absolute;
+            right: 220px;
+            top: 125px;
+            height: 61px;
+            width: 59px;
+        }
+
+        .box14 {
+            position: absolute;
+            right: 8px;
+            top: 170px;
+            height: 63px;
+            width: 105px;
+        }
+
+        .box15 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 184px;
+            width: 500px;
+        }
+
+        .box16 {
+            position: absolute;
+            right: 153px;
+            top: 0px;
+            height: 120px;
+            width: 180px;
+        }
+
+        .box17 {
+            position: absolute;
+            right: 245px;
+            top: 75px;
+            height: 261px;
+            width: 129px;
+        }
+
+        .box18 {
+            position: absolute;
+            right: 180px;
+            bottom: 10px;
+            height: 179px;
+            width: 205px;
+        }
+
+        .box19 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 113px;
+            width: 200px;
+        }
+
+        .box20 {
+            position: absolute;
+            right: 0px;
+            bottom: 146px;
+            height: 161px;
+            width: 368px;
+        }
+
+        .box21 {
+            position: absolute;
+            right: 208px;
+            bottom: 163px;
+            height: 149px;
+            width: 170px;
+        }
+
+        .box22 {
+            position: absolute;
+            right: 173px;
+            bottom: 0px;
+            height: 205px;
+            width: 191px;
+        }
+
+        .box23 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 108px;
+            width: 294px;
+        }
+
+        .box24 {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            height: 375px;
+            width: 180px;
+        }
+
+        .box25 {
+            position: absolute;
+            right: 86px;
+            bottom: 0px;
+            height: 271px;
+            width: 221px;
+        }
+
+        .box26 {
+            position: absolute;
+            right: 157px;
+            bottom: 129px;
+            height: 140px;
+            width: 112px;
+        }
+
+        .box27 {
+            position: absolute;
+            right: 0px;
+            top: 0;
+            height: 274px;
+            width: 206px;
+        }
+
+        .box28 {
+            position: absolute;
+            right: 85px;
+            bottom: 0;
+            height: 353px;
+            width: 221px;
+        }
+
+        .box29 {
+            position: absolute;
+            left: 178px;
+            top: 0;
+            height: 51px;
+            width: 68px;
+        }
+
+        .box30 {
+            position: absolute;
+            left: 72px;
+            bottom: 0;
+            height: 193px;
+            width: 128px;
+        }
+
+        .box31 {
+            position: absolute;
+            left: 92px;
+            bottom: 125px;
+            height: 133px;
+            width: 119px;
+        }
+
+        .box32 {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 269px;
+            width: 299px;
+        }
+
+        .box33 {
+            position: absolute;
+            right: 135px;
+            bottom: 58px;
+            height: 254px;
+            width: 116px;
+        }
+
+        .box34 {
+            position: absolute;
+            right: 256px;
+            bottom: 58px;
+            height: 254px;
+            width: 107px;
+        }
+
+        #btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 70px;
+            height: 70px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="box">
+        <audio id="music1" style="display:none;" controls autoplay="">
+            <source src="#" autoplay preload="none" type="audio/ogg"></source>
+        </audio>
+
+        <ul id="list" class="list">
+            <li>
+                <img src="img/1a3c7f52c6c4dc644cc7a2a14486bdcc.jpg" alt="">
+                <a href="javascript:;"><img src="images/f13496a53b8eeb0f3f511ed80ac3ce74.png" alt="" class="wkx32 f13496a53b8eeb0f3f511ed80ac3ce74"></a>
+                <a href="javascript:;"><img src="images/00963bb4879ce4dc903958b83b357b12.png" alt="" class="wkx33 00963bb4879ce4dc903958b83b357b12"></a>
+                <div class="box33 hideImg" src="e0328d282fca66319dfbd768fd212de5" imgid="f13496a53b8eeb0f3f511ed80ac3ce74"></div>
+                <div class="box34 hideImg" src="118a116e81373661ca8128be7cbc5d16" imgid="00963bb4879ce4dc903958b83b357b12"></div>
+            </li>
+            <li src="9729001359f0e4ca8329b01cf0871d94">
+                <img src="img/2e632735f711a6a58fa7e4aa786e74b8.jpg" alt="">
+                <a href="javascript:;"><img src="images/9d5b4d078820d9b835d1799ad2f983b3.png" alt="" class="wkx30 9d5b4d078820d9b835d1799ad2f983b3"></a>
+                <a href="javascript:;"><img src="images/a53109a626b0c21b8b46f19687d75467.png" alt="" class="wkx31 a53109a626b0c21b8b46f19687d75467"></a>
+                <div class="box31 hideImg" src="8ac55d6986d302d9d03c264519bbf7f0" imgid="9d5b4d078820d9b835d1799ad2f983b3"></div>
+                <div class="box32 hideImg" src="e0328d282fca66319dfbd768fd212de5" imgid="a53109a626b0c21b8b46f19687d75467"></div>
+                <p class="p1">Hello,new friend</p>
+            </li>
+            <li src="6f3468ab9ef65bb7ba16adb73f297edd">
+                <img src="img/4506026287f721be95e1a2410202aa41.jpg" alt="">
+                <a href="javascript:;"><img src="images/ce2547e21ac2b5cdfa17efcaaa054c2c.png" alt="" class="wkx26 ce2547e21ac2b5cdfa17efcaaa054c2c"></a>
+                <a href="javascript:;"><img src="images/5c8264c977d5d4eb3ca864e89077cb7e.png" alt="" class="wkx27 5c8264c977d5d4eb3ca864e89077cb7e"></a>
+                <a href="javascript:;"><img src="images/f9d87e65b0ce4accfab1c9a336a078ec.png" alt="" class="wkx28 f9d87e65b0ce4accfab1c9a336a078ec"></a>
+                <a href="javascript:;"><img src="images/186e84be5afe66babb933690f5eef4ba.png" alt="" class="wkx29 186e84be5afe66babb933690f5eef4ba"></a>
+                <div class="box27 hideImg" src="abe5449b46156812413e10e60b4a0b5a" imgid="ce2547e21ac2b5cdfa17efcaaa054c2c"></div>
+                <div class="box28 hideImg" src="a7af7f09c66a06a45463b947738c0208" imgid="5c8264c977d5d4eb3ca864e89077cb7e"></div>
+                <div class="box29 hideImg" src="b7e2529ff09b1277af3a698adf0a8b83" imgid="f9d87e65b0ce4accfab1c9a336a078ec"></div>
+                <div class="box30 hideImg" src="118a116e81373661ca8128be7cbc5d16" imgid="186e84be5afe66babb933690f5eef4ba"></div>
+                <p class="p2">Hello,new teacher</p>
+            </li>
+            <li src="89353282c049fee31a3a63d0723fe37f">
+                <img src="img/ca48d3c1d9f2ea0809b5848a71579bd6.jpg" alt="">
+                <a href="javascript:;"><img src="images/52e00e56c22eef90e973f14626c5c2f1.png" alt="" class="wkx23 52e00e56c22eef90e973f14626c5c2f1"></a>
+                <a href="javascript:;"><img src="images/ea4d87d00324977ed328bd164cd1e841.png" alt="" class="wkx24 ea4d87d00324977ed328bd164cd1e841"></a>
+                <a href="javascript:;"><img src="images/a28a28705381116b63d1f59b48fabaa7.png" alt="" class="wkx25 a28a28705381116b63d1f59b48fabaa7"></a>
+                <div class="box24 hideImg" src="939e842c9e6328f0f45da380cb368617" imgid="52e00e56c22eef90e973f14626c5c2f1"></div>
+                <div class="box25 hideImg" src="6c138e54f3b4cb892a31ec4f7ab89e61" imgid="ea4d87d00324977ed328bd164cd1e841"></div>
+                <div class="box26 hideImg" src="e42feb61e26180e1ce8fdd51d84feb80" imgid="a28a28705381116b63d1f59b48fabaa7"></div>
+                <p class="p1">Hello,new tree</p>
+            </li>
+            <li src="264596da49b475948a18ed73880f63e2">
+                <img src="img/7bbf325a2c7c7331fa8b9681190d6be7.jpg" alt="">
+                <a href="javascript:;"><img src="images/5d5512463361c0258fb1bb247b81effc.png" alt="" class="wkx20 5d5512463361c0258fb1bb247b81effc"></a>
+                <a href="javascript:;"><img src="images/bbd275179ae4fd7eb43e8ced24066fd7.png" alt="" class="wkx21 bbd275179ae4fd7eb43e8ced24066fd7"></a>
+                <a href="javascript:;"><img src="images/82d8c1172bc9dea4fb3b4aad6fb29700.png" alt="" class="wkx22 82d8c1172bc9dea4fb3b4aad6fb29700"></a>
+                <div class="box21 hideImg" src="d14e8fdd19299d68128d2757ae9cef25" imgid="5d5512463361c0258fb1bb247b81effc"></div>
+                <div class="box22 hideImg" src="4b77ce93d7c5b62e59054a0a6b8ccd43" imgid="bbd275179ae4fd7eb43e8ced24066fd7"></div>
+                <div class="box23 hideImg" src="c65be3f40e3e7d30ffbb8a7f715944ea" imgid="82d8c1172bc9dea4fb3b4aad6fb29700"></div>
+                <p class="p1">Hello,new house</p>
+            </li>
+            <li src="2acb1181440ce65309166056399a3872">
+                <img src="img/f7a22055b144053a6e9f1becc0e9036a.jpg" alt="">
+                <a href="javascript:;"><img src="images/c8c4c43c9eb47726eb88e8b5541bc9b8.png" alt="" class="wkx17 c8c4c43c9eb47726eb88e8b5541bc9b8"></a>
+                <a href="javascript:;"><img src="images/edf7f8a8fc50a440be6f63baf1b76b3d.png" alt="" class="wkx18 edf7f8a8fc50a440be6f63baf1b76b3d"></a>
+                <a href="javascript:;"><img src="images/46deca48d5b990e9f3570506c32607dc.png" alt="" class="wkx19 46deca48d5b990e9f3570506c32607dc"></a>
+                <div class="box18 hideImg" src="7eb69ac6999338683f0453ddc037673f" imgid="c8c4c43c9eb47726eb88e8b5541bc9b8"></div>
+                <div class="box19 hideImg" src="c484cd44a90697bd107e5ef80656188b" imgid="edf7f8a8fc50a440be6f63baf1b76b3d"></div>
+                <div class="box20 hideImg" src="4afc1e942ee5a52c3a0683996d517559" imgid="46deca48d5b990e9f3570506c32607dc"></div>
+                <p class="p1">we are here</p>
+            </li>
+            <li src="9c8165532cd10a489577d5268cc831bd">
+                <img src="img/43b7aa3fd8f96522af86dcb8a3c738d8.jpg" alt="">
+                <a href="javascript:;"><img src="images/ed46c4ac4daab01e9ef063d155c91b8d.png" alt="" class="wkx14 ed46c4ac4daab01e9ef063d155c91b8d"></a>
+                <a href="javascript:;"><img src="images/491e92477f43179233bb1afaf89f18ea.png" alt="" class="wkx15 491e92477f43179233bb1afaf89f18ea"></a>
+                <a href="javascript:;"><img src="images/6c653c3fe28e6f81a0f5b5eeb5231940.png" alt="" class="wkx16 6c653c3fe28e6f81a0f5b5eeb5231940"></a>
+                <div class="box15 hideImg" src="834442fb229f4114b5ff4f60244c77b3" imgid="ed46c4ac4daab01e9ef063d155c91b8d"></div>
+                <div class="box16 hideImg" src="386f31e4b831dde26ed47dedc5416a4c" imgid="491e92477f43179233bb1afaf89f18ea"></div>
+                <div class="box17 hideImg" src="e0328d282fca66319dfbd768fd212de5" imgid="6c653c3fe28e6f81a0f5b5eeb5231940"></div>
+                <p class="p1">GoodBye,friend</p>
+            </li>
+            <li src="1fdb5b44e41c64a631d40537305cba39">
+                <img src="img/e12b9f76f37292b5504bf3ec68928cfd.jpg" alt="">
+                <a href="javascript:;"><img src="images/11b5dc3dfb578b313a001d69eebf3f4a.png" alt="" class="wkx11 11b5dc3dfb578b313a001d69eebf3f4a"></a>
+                <a href="javascript:;"><img src="images/e30fc8311eeee3c73f5c214002184052.png" alt="" class="wkx12 e30fc8311eeee3c73f5c214002184052"></a>
+                <a href="javascript:;"><img src="images/b3827523975cd0a2b822218a1f53eb10.png" alt="" class="wkx13 b3827523975cd0a2b822218a1f53eb10"></a>
+                <div class="box12 hideImg" src="a7af7f09c66a06a45463b947738c0208" imgid="11b5dc3dfb578b313a001d69eebf3f4a"></div>
+                <div class="box13 hideImg" src="3abb1d17b958d0d2f8c8546106f3209f" imgid="e30fc8311eeee3c73f5c214002184052"></div>
+                <div class="box14 hideImg" src="70e2edf6bba828ec32272e6f6731ea32" imgid="b3827523975cd0a2b822218a1f53eb10"></div>
+                <p class="p1">GoodBye,teacher</p>
+            </li>
+            <li src="771108e2b0e8cf5b667ebc898dbfa488">
+                <img src="img/acffda624717204f295badd2095e3b29.jpg" alt="">
+                <a href="javascript:;"><img src="images/29c847c7f9b7d2276c7317a06fef5e18.png" alt="" class="wkx8 29c847c7f9b7d2276c7317a06fef5e18"></a>
+                <a href="javascript:;"><img src="images/2ead96d5142343ea3dbc402d636f7bb9.png" alt="" class="wkx9 2ead96d5142343ea3dbc402d636f7bb9"></a>
+                <a href="javascript:;"><img src="images/bd4aceca8169ea3463dd8061ab8cb6bb.png" alt="" class="wkx10 bd4aceca8169ea3463dd8061ab8cb6bb"></a>
+                <div class="box9 hideImg boxAudio" src="939e842c9e6328f0f45da380cb368617" imgid="29c847c7f9b7d2276c7317a06fef5e18"></div>
+                <div class="box10 hideImg boxAudio" src="6c138e54f3b4cb892a31ec4f7ab89e61" imgid="2ead96d5142343ea3dbc402d636f7bb9"></div>
+                <div class="box11 hideImg boxAudio" src="a7c42f8e145212c298042c88494d18b3" imgid="bd4aceca8169ea3463dd8061ab8cb6bb"></div>
+                <p class="p1">GoodBye,tree</p>
+            </li>
+            <li src="9dcd6567afa8d2ff3fa9e07c029d9ff1">
+                <img src="img/bf3c0adf52c929b74b9eccfe00701f93.jpg" alt="">
+                <a href="javascript:;"><img src="images/13608779f55f8b08aff2fda65024b0b8.png" alt="" class="wkx5 13608779f55f8b08aff2fda65024b0b8"></a>
+                <a href="javascript:;"><img src="images/f922ef33da791921defdfa405e9873ad.png" alt="" class="wkx3 f922ef33da791921defdfa405e9873ad"></a>
+                <a href="javascript:;"><img src="images/aef542f95221f4823e7c85b1a36317c2.png" alt="" class="wkx4 aef542f95221f4823e7c85b1a36317c2"></a>
+                <a href="javascript:;"><img src="images/df72c11bfae439992399fbeadefa4d55.png" alt="" class="wkx6 df72c11bfae439992399fbeadefa4d55"></a>
+                <a href="javascript:;"><img src="images/805e6f01d7d9426c611990f3f962819f.png" alt="" class="wkx7 805e6f01d7d9426c611990f3f962819f"></a>
+                <div class="voice hideImg boxAudio" src="c74cd6baba09bb4b4b7c1b57ea86b5ca" imgid="13608779f55f8b08aff2fda65024b0b8"></div>
+                <div class="box5 hideImg boxAudio" src="4903666f27953b6a88292d160ce7f84d" imgid="f922ef33da791921defdfa405e9873ad"></div>
+                <div class="box6 hideImg boxAudio" src="a95a33487d01e706e2337fcd0369a0be" imgid="aef542f95221f4823e7c85b1a36317c2"></div>
+                <div class="box7 hideImg boxAudio" src="589849be84969fe7214686d2ab0fc942" imgid="df72c11bfae439992399fbeadefa4d55"></div>
+                <div class="box8 hideImg boxAudio" src="670e7e47d199353f1b295c02b435b9d2" imgid="805e6f01d7d9426c611990f3f962819f"></div>
+                <p class="p1">GoodBye,house</p>
+            </li>
+            <li src="a0dedc144a64bfa5074327ac2ec94cad">
+                <img src="img/6f81c0619238e8b176ba9227dc8b3578.jpg" alt="">
+                <a href="javascript:;" class="voice1"><img src="images/da5695fde77ef0e00b9dc541e98127d7.png" alt="" class="wkx da5695fde77ef0e00b9dc541e98127d7"></a>
+                <a href="javascript:;" class="voice2"><img src="images/4f3a753d6be74ff962f54f9c0c9dfab1.png" alt="" class="wkx1 4f3a753d6be74ff962f54f9c0c9dfab1"></a>
+                <a href="javascript:;" class="voice3"><img src="images/b4fbd2abddb0288a7cedf1963783c70a.png" alt="" class="wkx2 b4fbd2abddb0288a7cedf1963783c70a"></a>
+                <div class="voice1 hideImg boxAudio" src="205b9f05a0fb30ed8ebf4cad076682fc" imgid="da5695fde77ef0e00b9dc541e98127d7"></div>
+                <div class="box1 hideImg boxAudio" src="c65be3f40e3e7d30ffbb8a7f715944ea" imgid="4f3a753d6be74ff962f54f9c0c9dfab1"></div>
+                <div class="box2 hideImg boxAudio" src="c65be3f40e3e7d30ffbb8a7f715944ea" imgid="4f3a753d6be74ff962f54f9c0c9dfab1"></div>
+                <div class="box3 hideImg boxAudio" src="c65be3f40e3e7d30ffbb8a7f715944ea" imgid="4f3a753d6be74ff962f54f9c0c9dfab1"></div>
+                <div class="box4 hideImg boxAudio" src="118a116e81373661ca8128be7cbc5d16" imgid="b4fbd2abddb0288a7cedf1963783c70a"></div>
+                <p class="p1">we are moving today</p>
+            </li>
+            <li class="audioFirst" src="f2f71b40dc7922892f93a8cd57a40812;0d36e998c088f7b0cf471f7c0626c667">
+                <img src="img/43b7aa3fd8f96522af86dcb8a3c738d8.jpg" class="img">
+                <img src="img/1e76bb56029b15596786a057934c6172.png" class="img1">
+                <img src="img/0603a8b66c5ab059f10973551409999c.png" class="img2">
+                <img src="img/ca6523869c9d70d5a07a9a075e9ee419.png" class="img3">
+            </li>
+
+            <div id="btn"></div>
+        </ul>
+        <input type="hidden" value="0" id="hidImgFlag" />
+    </div>
+    <script type="text/javascript" src="js/my.js"></script>
+</body>
+</html>
